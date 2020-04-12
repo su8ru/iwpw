@@ -9,24 +9,26 @@
       >
         <slide v-for="pay in pays.data" :key="pay.name">
           <div class="pay-logo" v-html="pay.logo" />
-          <a :href="pay.link">
+          <a :href="pay.link" class="pay-type-logo">
             <pay-type-logo :type="pay.type" />
           </a>
         </slide>
       </carousel>
     </div>
-    <div class="box" id="bag">
-      <div class="toggle-buttons">
-        <toggle-button name="bag" />
-        <toggle-button name="receipt" />
+    <div>
+      <div class="box" id="bag">
+        <div class="toggle-buttons">
+          <toggle-button name="bag" />
+          <toggle-button name="receipt" />
+        </div>
       </div>
-    </div>
-    <div class="box" id="cutlery">
-      <div class="toggle-buttons">
-        <toggle-button name="chopsticks" />
-        <toggle-button name="fork" />
-        <toggle-button name="knife" />
-        <toggle-button name="spoon" />
+      <div class="box" id="cutlery">
+        <div class="toggle-buttons">
+          <toggle-button name="chopsticks" />
+          <toggle-button name="fork" />
+          <toggle-button name="knife" />
+          <toggle-button name="spoon" />
+        </div>
       </div>
     </div>
   </div>
@@ -34,10 +36,10 @@
 
 <style lang="scss" scoped>
 #home {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 8px;
+  display: grid;
+  grid-template-rows: calc(100% - 150px) 150px;
+  padding-bottom: 10px;
+  height: 100%;
   .box {
     .toggle-buttons {
       width: 100%;
@@ -45,6 +47,7 @@
       justify-content: space-around;
       align-items: center;
     }
+    margin-bottom: 10px;
   }
   #bag,
   #cutlery {

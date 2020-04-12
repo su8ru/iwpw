@@ -21,7 +21,7 @@
 <style lang="scss" scoped>
 #app {
   display: grid;
-  grid-template-rows: 70px 1fr 30px;
+  grid-template-rows: 70px calc(100% - 100px) 30px;
   grid-template-columns: 1fr;
   height: var(--vh);
   text-align: center;
