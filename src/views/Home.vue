@@ -1,6 +1,20 @@
 <template>
   <div id="home">
-    <div class="box" id="pay"></div>
+    <div class="box" id="pay">
+      <carousel
+        :per-page="1"
+        :pagination-enabled="true"
+        :navigation-enabled="false"
+        class="pay-carousel"
+      >
+        <slide v-for="pay in pays.data" :key="pay.name">
+          <div class="pay-logo" v-html="pay.logo" />
+          <a :href="pay.link">
+            <pay-type-logo :type="pay.type" />
+          </a>
+        </slide>
+      </carousel>
+    </div>
     <div class="box" id="bag">
       <div class="toggle-buttons">
         <toggle-button name="bag" />
@@ -21,8 +35,8 @@
 <style lang="scss" scoped>
 #home {
   .box {
-    width: 100%;
     .toggle-buttons {
+      width: 100%;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -33,7 +47,9 @@
   }
   #bag,
   #cutlery {
+    display: flex;
     height: 25%;
+    align-items: center;
   }
 }
 </style>
@@ -41,7 +57,27 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import toggleButton from "@/components/toggleButton.vue";
+import { Carousel, Slide } from "vue-carousel";
+import { pays, payType } from "@/types/pays";
+import payTypeLogo from "@/components/payTypeLogo.vue";
 
-@Component({ components: { toggleButton } })
-export default class Home extends Vue {}
+@Component({
+  components: {
+    toggleButton,
+    Carousel,
+    Slide,
+    payTypeLogo
+  }
+})
+export default class Home extends Vue {
+  readonly pays: pays = require("@/assets/pays.json");
+  readonly barcode = require("../assets/barcode.svg");
+
+  isBarcode(type: payType) {
+    return type === payType.barcode;
+  }
+  isFelica(type: payType) {
+    return type === payType.felica;
+  }
+}
 </script>

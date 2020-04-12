@@ -4,16 +4,16 @@
     :class="isActive ? 'active' : 'inactive'"
     @click="isActive = !isActive"
   >
-    <font-awesome-icon v-if="!isActive" icon="ban" size="5x" />
+    <font-awesome-icon v-if="!isActive" icon="ban" size="4x" />
     <svg-element :name="name" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .toggle-button {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
   filter: drop-shadow(0 2px 2px rgba(#000, 0.3));
 
   &:active {
@@ -34,6 +34,8 @@
   .fa-ban {
     position: absolute;
     color: rgba(#338, 0.5);
+    left: -2px;
+    top: -1px;
   }
 }
 </style>
