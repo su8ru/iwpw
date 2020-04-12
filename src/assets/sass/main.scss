@@ -11,17 +11,16 @@ $theme-colors: ( // color for bootstrap
   font-family: "Noto Sans JP", sans-serif;
 }
 
-h1 {
-  font-size: 2rem;
-  margin: 0;
-}
-
 .pay-logo {
   svg {
-    height: 150px;
+    height: 120px;
     width: 100%;
   }
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+.pay-type-logo {
+  height: 75px;
+  color: #333;
 }
 
 .pay-carousel {
@@ -37,11 +36,6 @@ h1 {
 .VueCarousel-dot {
   padding: 8px !important;
   margin: 0 !important;
-}
-
-.pay-type-logo {
-  height: 90px;
-  color: #333;
 }
 
 .st0{fill:currentColor;}

@@ -37,6 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-bottom: 8px;
   .box {
     .toggle-buttons {
       width: 100%;
@@ -49,7 +50,6 @@
   #cutlery {
     display: flex;
     align-items: center;
-    padding: 16px 0;
     width: 100vw;
   }
 }
