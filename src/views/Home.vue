@@ -34,6 +34,9 @@
 
 <style lang="scss" scoped>
 #home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .box {
     .toggle-buttons {
       width: 100%;
@@ -42,14 +45,12 @@
       align-items: center;
     }
   }
-  #pay {
-    height: 50%;
-  }
   #bag,
   #cutlery {
     display: flex;
-    height: 25%;
     align-items: center;
+    padding: 16px 0;
+    width: 100vw;
   }
 }
 </style>

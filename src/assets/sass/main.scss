@@ -26,18 +26,21 @@ h1 {
 
 .pay-carousel {
   width: 100vw;
-  padding: 0 1rem;
+}
+.VueCarousel-slide {
+  width: 100%;
+  padding: 8px;
 }
 .VueCarousel-dot-container {
   margin: 0 !important;
 }
-
 .VueCarousel-dot {
   padding: 8px !important;
+  margin: 0 !important;
 }
 
 .pay-type-logo {
-  height: 100px;
+  height: 90px;
   color: #333;
 }
 
