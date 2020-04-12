@@ -14,7 +14,13 @@
       <font-awesome-icon v-else icon="times" size="4x" class="fa-fw" />
       <svg-element :name="name" class="icon" />
     </div>
-    <span class="button-name" :style="{ color: isActive ? '#444' : '#777' }">
+    <span
+      class="button-name"
+      :style="{
+        color: isActive ? '#444' : '#777',
+        textDecoration: isActive ? 'none' : 'line-through #222'
+      }"
+    >
       {{ name_ja }}
     </span>
   </div>
@@ -26,7 +32,6 @@
   height: 70px;
   border-radius: 5px;
   filter: drop-shadow(0 2px 2px rgba(#000, 0.3));
-  border: 3px solid #ddd;
 
   &:active {
     -webkit-transform: translateY(3px);
@@ -42,7 +47,8 @@
   .fa-times {
     position: absolute;
     z-index: 10;
-    left: -8px;
+    left: -5px;
+    top: 3px;
   }
 }
 .active {
