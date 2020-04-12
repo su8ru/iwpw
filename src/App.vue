@@ -11,6 +11,18 @@
     </header>
     <router-view></router-view>
     <footer>
+      <nav>
+        <ul>
+          <li>
+            <router-link :to="{ name: usage }">使い方</router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: policy }">
+              プライバシーポリシー
+            </router-link>
+          </li>
+        </ul>
+      </nav>
       <small>
         &copy; su8ru, kichi2004, takeno-hito 2020
       </small>
@@ -21,7 +33,7 @@
 <style lang="scss" scoped>
 #app {
   display: grid;
-  grid-template-rows: 70px calc(100% - 100px) 30px;
+  grid-template-rows: 70px calc(100% - 120px) 50px;
   grid-template-columns: 1fr;
   height: var(--vh);
   text-align: center;
@@ -51,6 +63,29 @@
   footer {
     background: #555;
     color: #fff;
+
+    nav {
+      ul {
+        margin: 0;
+        margin-top: 2px;
+        padding: 0;
+        li {
+          list-style-type: none;
+          display: inline;
+          &:not(:last-of-type)::after {
+            content: " ･ ";
+          }
+          a {
+            color: #fff;
+            text-decoration: underline;
+          }
+          a:visited {
+            color: #eee;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
 </style>
