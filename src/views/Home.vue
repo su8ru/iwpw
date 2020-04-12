@@ -8,10 +8,12 @@
         class="pay-carousel"
       >
         <slide v-for="pay in pays.data" :key="pay.name">
-          <div class="pay-logo" v-html="pay.logo" />
-          <a :href="pay.link" class="pay-type-logo">
-            <pay-type-logo :type="pay.type" />
-          </a>
+          <div class="slide-inner">
+            <div class="pay-logo" v-html="pay.logo" />
+            <a :href="pay.link" class="pay-type-logo">
+              <pay-type-logo :type="pay.type" />
+            </a>
+          </div>
         </slide>
       </carousel>
     </div>
