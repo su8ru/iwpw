@@ -4,38 +4,48 @@
     :class="isActive ? 'active' : 'inactive'"
     @click="isActive = !isActive"
   >
-    <font-awesome-icon v-if="!isActive" icon="ban" size="4x" />
-    <svg-element :name="name" />
+    <font-awesome-icon v-if="isActive" :icon="['far', 'circle']" size="4x" />
+    <font-awesome-icon v-else icon="ban" size="4x" />
+    <svg-element :name="name" class="icon" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .toggle-button {
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
   filter: drop-shadow(0 2px 2px rgba(#000, 0.3));
+  border: 3px solid #ddd;
 
   &:active {
     -webkit-transform: translateY(3px);
     transform: translateY(3px);
     filter: drop-shadow(0 0px 1px rgba(#000, 0.2));
   }
+
+  .icon {
+    filter: drop-shadow(1px 2px 1px rgba(#fff, 0.8));
+  }
+
+  .fa-circle,
+  .fa-ban {
+    position: absolute;
+    z-index: 10;
+  }
 }
 .active {
-  border: 10px solid #d33;
-  background: #fff;
-  color: #333;
+  background: #fafafa;
+  color: #444;
+  .fa-circle {
+    color: rgba(#d33, 0.8);
+  }
 }
 .inactive {
   background: #ddd;
-  border: 10px solid #ddd;
   color: #777;
   .fa-ban {
-    position: absolute;
-    color: rgba(#338, 0.5);
-    left: -2px;
-    top: -1px;
+    color: rgba(#008, 0.5);
   }
 }
 </style>
