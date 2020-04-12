@@ -21,7 +21,7 @@ import VueGtag from "vue-gtag";
 Vue.use(
   VueGtag,
   {
-    config: { id: "" }
+    config: { id: "UA-163383240-1" }
   },
   router
 );
