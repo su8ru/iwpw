@@ -1,12 +1,28 @@
 <template>
-  <div
-    class="toggle-button"
-    :class="isActive ? 'active' : 'inactive'"
-    @click="isActive = !isActive"
-  >
-    <font-awesome-icon v-if="isActive" :icon="['far', 'circle']" size="4x" />
-    <font-awesome-icon v-else icon="ban" size="4x" />
-    <svg-element :name="name" class="icon" />
+  <div>
+    <div
+      class="toggle-button"
+      :class="isActive ? 'active' : 'inactive'"
+      @click="isActive = !isActive"
+    >
+      <font-awesome-icon
+        v-if="isActive"
+        :icon="['far', 'circle']"
+        size="4x"
+        class="fa-fw"
+      />
+      <font-awesome-icon v-else icon="times" size="4x" class="fa-fw" />
+      <svg-element :name="name" class="icon" />
+    </div>
+    <span
+      class="button-name"
+      :style="{
+        color: isActive ? '#444' : '#bbb',
+        textDecoration: isActive ? 'none' : 'line-through #999'
+      }"
+    >
+      {{ name_ja }}
+    </span>
   </div>
 </template>
 
@@ -16,7 +32,6 @@
   height: 70px;
   border-radius: 5px;
   filter: drop-shadow(0 2px 2px rgba(#000, 0.3));
-  border: 3px solid #ddd;
 
   &:active {
     -webkit-transform: translateY(3px);
@@ -29,9 +44,11 @@
   }
 
   .fa-circle,
-  .fa-ban {
+  .fa-times {
     position: absolute;
     z-index: 10;
+    left: -5px;
+    top: 3px;
   }
 }
 .active {
@@ -42,11 +59,15 @@
   }
 }
 .inactive {
-  background: #ddd;
-  color: #777;
-  .fa-ban {
-    color: rgba(#008, 0.5);
+  background: #eaeaea;
+  color: #bbb;
+  .fa-times {
+    color: rgba(#008, 0.2);
   }
+}
+.button-name {
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 </style>
 
@@ -58,6 +79,8 @@ import svgElement from "@/components/svgElement.vue";
 export default class ToggleButton extends Vue {
   @Prop({ required: true })
   readonly name!: string;
+  @Prop({ required: true })
+  readonly name_ja!: string;
 
   getSVG(name: string) {
     return require(`../assets/${name}.svg`);

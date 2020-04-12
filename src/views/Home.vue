@@ -8,25 +8,28 @@
         class="pay-carousel"
       >
         <slide v-for="pay in pays.data" :key="pay.name">
-          <div class="pay-logo" v-html="pay.logo" />
-          <a :href="pay.link">
-            <pay-type-logo :type="pay.type" />
-          </a>
+          <div class="slide-inner">
+            <div class="pay-logo" v-html="pay.logo" />
+            <a :href="pay.link" class="pay-type-logo">
+              <pay-type-logo :type="pay.type" />
+            </a>
+          </div>
         </slide>
       </carousel>
     </div>
-    <div class="box" id="bag">
-      <div class="toggle-buttons">
-        <toggle-button name="bag" />
-        <toggle-button name="receipt" />
+    <div>
+      <div class="box" id="bag">
+        <div class="toggle-buttons">
+          <toggle-button name="bag" name_ja="袋" />
+          <toggle-button name="receipt" name_ja="レシート" />
+        </div>
       </div>
-    </div>
-    <div class="box" id="cutlery">
-      <div class="toggle-buttons">
-        <toggle-button name="chopsticks" />
-        <toggle-button name="fork" />
-        <toggle-button name="knife" />
-        <toggle-button name="spoon" />
+      <div class="box" id="cutlery">
+        <div class="toggle-buttons">
+          <toggle-button name="chopsticks" name_ja="箸" />
+          <toggle-button name="fork" name_ja="フォーク" />
+          <toggle-button name="spoon" name_ja="スプーン" />
+        </div>
       </div>
     </div>
   </div>
@@ -34,6 +37,10 @@
 
 <style lang="scss" scoped>
 #home {
+  display: grid;
+  grid-template-rows: calc(100% - 190px) 190px;
+  padding-bottom: 10px;
+  height: 100%;
   .box {
     .toggle-buttons {
       width: 100%;
@@ -41,15 +48,13 @@
       justify-content: space-around;
       align-items: center;
     }
-  }
-  #pay {
-    height: 50%;
+    margin-bottom: 10px;
   }
   #bag,
   #cutlery {
     display: flex;
-    height: 25%;
     align-items: center;
+    width: 100vw;
   }
 }
 </style>

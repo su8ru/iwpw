@@ -1,5 +1,5 @@
 <template>
-  <component class="pay-type-logo" :is="svg" />
+  <component :is="svg" />
 </template>
 
 <style lang="scss" scoped></style>
