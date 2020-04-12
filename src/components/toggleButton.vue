@@ -17,8 +17,8 @@
     <span
       class="button-name"
       :style="{
-        color: isActive ? '#444' : '#777',
-        textDecoration: isActive ? 'none' : 'line-through #222'
+        color: isActive ? '#444' : '#bbb',
+        textDecoration: isActive ? 'none' : 'line-through #999'
       }"
     >
       {{ name_ja }}
@@ -59,10 +59,10 @@
   }
 }
 .inactive {
-  background: #ddd;
-  color: #777;
+  background: #eaeaea;
+  color: #bbb;
   .fa-times {
-    color: rgba(#008, 0.5);
+    color: rgba(#008, 0.2);
   }
 }
 .button-name {

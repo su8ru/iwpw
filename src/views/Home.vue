@@ -28,7 +28,6 @@
         <div class="toggle-buttons">
           <toggle-button name="chopsticks" name_ja="箸" />
           <toggle-button name="fork" name_ja="フォーク" />
-          <toggle-button name="knife" name_ja="ナイフ" />
           <toggle-button name="spoon" name_ja="スプーン" />
         </div>
       </div>
