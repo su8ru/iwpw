@@ -1,7 +1,7 @@
 <template>
   <article id="policy">
     <breadcrumb :text="page_title" />
-    <h1>{{ page_title }}</h1>
+    <h1>プライバシーポリシー</h1>
     <p>
       I Will Pay With （以下当サイトとする）
       では、以下のポリシーのもとでサービスを提供しています。
@@ -51,7 +51,5 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-export default class Policy extends Vue {
-  readonly page_title = "プライバシーポリシー";
-}
+export default class Policy extends Vue {}
 </script>
