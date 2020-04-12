@@ -37,7 +37,7 @@
   grid-template-columns: 1fr;
   height: var(--vh);
   text-align: center;
-  background: #fefefe;
+  background: #fff;
 
   header {
     h1 {
