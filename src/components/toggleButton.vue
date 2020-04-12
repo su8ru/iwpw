@@ -1,12 +1,15 @@
 <template>
-  <div
-    class="toggle-button"
-    :class="isActive ? 'active' : 'inactive'"
-    @click="isActive = !isActive"
-  >
-    <font-awesome-icon v-if="isActive" :icon="['far', 'circle']" size="4x" />
-    <font-awesome-icon v-else icon="ban" size="4x" />
-    <svg-element :name="name" class="icon" />
+  <div>
+    <div
+      class="toggle-button"
+      :class="isActive ? 'active' : 'inactive'"
+      @click="isActive = !isActive"
+    >
+      <font-awesome-icon v-if="isActive" :icon="['far', 'circle']" size="4x" />
+      <font-awesome-icon v-else icon="ban" size="4x" />
+      <svg-element :name="name" class="icon" />
+    </div>
+    <span class="button-name">{{ name }}</span>
   </div>
 </template>
 
@@ -47,6 +50,10 @@
   .fa-ban {
     color: rgba(#008, 0.5);
   }
+}
+.button-name {
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 </style>
 

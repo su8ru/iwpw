@@ -37,7 +37,7 @@
 <style lang="scss" scoped>
 #home {
   display: grid;
-  grid-template-rows: calc(100% - 150px) 150px;
+  grid-template-rows: calc(100% - 190px) 190px;
   padding-bottom: 10px;
   height: 100%;
   .box {
