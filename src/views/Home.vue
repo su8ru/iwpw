@@ -18,16 +18,16 @@
     <div>
       <div class="box" id="bag">
         <div class="toggle-buttons">
-          <toggle-button name="bag" />
-          <toggle-button name="receipt" />
+          <toggle-button name="bag" name_ja="袋" />
+          <toggle-button name="receipt" name_ja="レシート" />
         </div>
       </div>
       <div class="box" id="cutlery">
         <div class="toggle-buttons">
-          <toggle-button name="chopsticks" />
-          <toggle-button name="fork" />
-          <toggle-button name="knife" />
-          <toggle-button name="spoon" />
+          <toggle-button name="chopsticks" name_ja="箸" />
+          <toggle-button name="fork" name_ja="フォーク" />
+          <toggle-button name="knife" name_ja="ナイフ" />
+          <toggle-button name="spoon" name_ja="スプーン" />
         </div>
       </div>
     </div>

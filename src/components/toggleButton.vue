@@ -9,7 +9,9 @@
       <font-awesome-icon v-else icon="ban" size="4x" />
       <svg-element :name="name" class="icon" />
     </div>
-    <span class="button-name">{{ name }}</span>
+    <span class="button-name" :style="{ color: isActive ? '#444' : '#777' }">
+      {{ name_ja }}
+    </span>
   </div>
 </template>
 
@@ -53,7 +55,7 @@
 }
 .button-name {
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 </style>
 
@@ -65,6 +67,8 @@ import svgElement from "@/components/svgElement.vue";
 export default class ToggleButton extends Vue {
   @Prop({ required: true })
   readonly name!: string;
+  @Prop({ required: true })
+  readonly name_ja!: string;
 
   getSVG(name: string) {
     return require(`../assets/${name}.svg`);
