@@ -54,6 +54,8 @@ $theme-colors: ( // color for bootstrap
       display: block;
       height: 30%;
       color: #333;
+      box-sizing: border-box;
+      padding-top: 8px;
 
       svg {
         height: 100%;
